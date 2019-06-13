@@ -7,3 +7,6 @@ print 'variable'
 
 name , age , marks = 'Habib' , 25 , 19.5
 
+print name
+print age
+print marks
