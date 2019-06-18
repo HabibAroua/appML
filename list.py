@@ -5,8 +5,12 @@ print listName
 print listName[1]
 listName.append("Laila")
 print listName
-
 del listName[2]
-
 print listName
+listNumber = [5,3,8,7,1,5,4,9]
+print listNumber
+print max(listNumber)
+print min(listNumber)
+print len(listNumber)
+
 
