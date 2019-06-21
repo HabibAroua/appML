@@ -9,3 +9,4 @@ print tup3[1:4]
 print tup1
 del tup1
 print tup3
+print tup3[0]*3
