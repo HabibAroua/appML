@@ -13,4 +13,8 @@ for i in range(0,len(list1)):
 print "Example"
 for i in range(0,11,2):
     print i
+print "Double loop"
+for i in range(0,5):
+    for j in range(0,3):
+        print i*j
 
