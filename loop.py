@@ -10,4 +10,7 @@ for i in range(0,10):
 print "Element of array using index"
 for i in range(0,len(list1)):
     print list1[i]
+print "Example"
+for i in range(0,11,2):
+    print i
 
