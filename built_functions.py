@@ -21,3 +21,8 @@ sent='print("Hi")'
 #eval(sent)
 exec(sent)
 print eval("5*2")
+
+a=5
+print str(a)
+print int(5)
+print float(5)
