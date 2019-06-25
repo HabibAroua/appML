@@ -7,3 +7,17 @@ print bool(1)
 print bool(80)
 print bool(-50)
 print bool(0.2)
+print bool(None)
+print bool("cc")
+print bool("")
+
+#print dir("Hello")
+#print help()
+#Example help()
+#sent="Hello"
+#print help(sent.upper)
+
+sent='print("Hi")'
+#eval(sent)
+exec(sent)
+print eval("5*2")
