@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Reservation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <center>
+            <fieldset>
+                <form>
+                    <table>
+                        <tr>
+                            <td>Cahier de rendez-vous pour</td>
+                            <td>
+                                <input type="radio" name="gender" value="Individuels" onclick="showIndividu()" checked> Individuels
+                                <input type="radio" name="gender" value="Famille" onclick="showFamille()"> Famille
+                            </td>
+                        </tr>
+                        <tr id="id1">
+                            <td>Combien de nominations *</td>
+                            <td>
+                                <select>
+                                    <option>2 membres</option>
+                                    <option>3 membres</option>
+                                    <option>4 membres</option>
+                                    <option>5 membres</option>
+                                    <option>6 membres</option>
+                                    <option>7 membres</option>
+                                    <option>8 membres</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sélectionnez votre centre *</td>
+                            <td>
+                                <select>
+                                    <option>Sélectionnez</option>
+                                    <option>Tangier</option>
+                                    <option>Casablanca</option>
+                                    <option>Rabat</option>
+                                    <option>Nador</option>
+                                    <option>Tetouan</option>
+                                    <option>Agadir</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Catégorie de nomination *</td>
+                            <td>
+                                <select>
+                                    <option>Select Category</option>
+                                    <option>Normal</option>
+                                    <option>Premium</option>
+                                    <option>Prime Time</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>numéro du téléphone mobile : *</td>
+                            <td>
+                                <input type="text" style="width:20px" />
+                                <input type="text" style="width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>adresse email : *</td>
+                            <td><input type="email" style="width:128px"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <button>demande le code de verification</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>code de vérification: *</td>
+                            <td>
+                                <input type="text" />
+                                <button>Continue</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </fieldset>
+        </center>
+        <script>
+            $("#id1").hide();
+
+            function showIndividu()
+            {
+                $("#id1").hide();       
+            }
+
+            function showFamille()
+            {
+                $("#id1").show();
+            }
+        </script>
+    </body>
+</html>
