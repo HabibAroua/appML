@@ -12,6 +12,9 @@ def addNewLineInFile(fileName,name):
     hs.write(name+"\n")
     hs.close()
     
+def createNewFile(fileName):
+    f= open(fileName,"w+")
     
-addNewLineInFile("test.txt","Habib")
-readFile("test.txt")
+#addNewLineInFile("test.txt","Habib")
+#readFile("test.txt")
+createNewFile('hello.txt')
