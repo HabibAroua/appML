@@ -5,21 +5,33 @@ import urllib.request
 import urllib.parse 
 
 def readFile(fileName):
-    with open(fileName,'r') as f:
-        for line in f:
-            print(line, end='')
+    try:
+        with open(fileName,'r') as f:
+            for line in f:
+                print(line, end='')
+    except Exception as e : 
+        print(str(e))
 
-def writeFile(fileName,line):        
-    with open(fileName,'w') as f:
-        f.write(line)
+def writeFile(fileName,line):
+    try:
+        with open(fileName,'w') as f:
+            f.write(line)
+    except Exception as e : 
+        print("This file is not found : "+str(e))
         
 def addNewLineInFile(fileName,name):
-    hs = open(fileName,"a")
-    hs.write(name+"\n")
-    hs.close()
-    
+    try:
+        hs = open(fileName,"a")
+        hs.write(name+"\n")
+        hs.close()
+    except Exception as e : 
+        print(str(e))
+        
 def createNewFile(fileName):
-    f= open(fileName,"w+")
+    try:
+        f= open(fileName,"w+")
+    except Exception as e : 
+        print(str(e))
     
 def main():
     try:
