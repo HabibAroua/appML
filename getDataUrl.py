@@ -8,7 +8,7 @@ def readFile(fileName):
     try:
         with open(fileName,'r') as f:
             for line in f:
-                print(line, end='')
+                print(line, end= '')
     except Exception as e : 
         print(str(e))
 
@@ -35,7 +35,7 @@ def createNewFile(fileName):
     
 def main():
     try:
-        choice = input("Do you want create new file Y/N : ")
+        choice = input("Do you want to create new file Y/N : ")
         if choice == 'Y' or choice == 'y':
             createNewFile(input("File name : "))
         c='Y'
@@ -49,6 +49,8 @@ def main():
             if choice == 'Y' or choice == 'y' :
                 addNewLineInFile(input('File name : '),str(s))
             c = input("Continue ? Y/N : ")
+        print ('Show the content of file')
+        readFile(input("Show content of file : "))
   
     except Exception as e : 
         print(str(e))
