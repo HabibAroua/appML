@@ -3,6 +3,9 @@
 
 import urllib.request 
 import urllib.parse 
+import sys
+sys.path.append('HTMLtoJSONParser.py')
+import HTMLtoJSONParser
 
 def readFile(fileName):
     try:
@@ -55,5 +58,7 @@ def main():
     except Exception as e : 
         print(str(e))
         main()
-        
+content = '<html><body><div class="an_example"><p>one paragraph</p></div></body></html>'
+js = HTMLtoJSONParser.to_json(content)
+print (js)
 main()
