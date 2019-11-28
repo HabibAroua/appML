@@ -6,6 +6,7 @@ import urllib.parse
 import sys
 sys.path.append('HTMLtoJSONParser.py')
 import HTMLtoJSONParser
+from HTMLtoJSONParser import *
 
 def readFile(fileName):
     try:
@@ -38,7 +39,7 @@ def createNewFile(fileName):
     
 def main():
     try:
-        choice = input("Do you want to create new file Y/N : ")
+        choice = input("Do you want to create new file Y/N ? : ")
         if choice == 'Y' or choice == 'y':
             createNewFile(input("File name : "))
         c='Y'
