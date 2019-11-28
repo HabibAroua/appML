@@ -10,9 +10,9 @@ from HTMLtoJSONParser import *
 
 def readFile(fileName):
     try:
-        with open(fileName,'r') as f:
-            for line in f:
-                print(line, end= '')
+        with open(fileName, 'r') as file:
+            data = file.read().replace('\n', '')
+        return data
     except Exception as e : 
         print(str(e))
 
@@ -59,7 +59,12 @@ def main():
     except Exception as e : 
         print(str(e))
         main()
-content = '<html><body><div class="an_example"><p>one paragraph</p></div></body></html>'
-js = HTMLtoJSONParser.to_json(content)
-print (js)
-main()
+
+def convertToJSON(fileName):
+    print(readFile(fileName))
+    #content = '<html><body><div class="an_example"><p>one paragraph</p></div></body></html>'
+    #js = HTMLtoJSONParser.to_json(content)
+    #print (js)
+
+convertToJSON(input("File name : "))
+#main()
