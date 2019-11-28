@@ -2,8 +2,10 @@
 # a use of raw_input() 
 
 import urllib.request 
-import urllib.parse 
+import urllib.parse
+import re
 import sys
+import json
 sys.path.append('HTMLtoJSONParser.py')
 import HTMLtoJSONParser
 from HTMLtoJSONParser import *
@@ -60,11 +62,13 @@ def main():
         print(str(e))
         main()
 
-def convertToJSON(fileName):
-    print(readFile(fileName))
-    #content = '<html><body><div class="an_example"><p>one paragraph</p></div></body></html>'
-    #js = HTMLtoJSONParser.to_json(content)
-    #print (js)
+def clean(fileName):
+    content=readFile(fileName)
+    x1=content.find("body")
+    x2=content.find("</body>")
+    print(content[x1:x2])
+    writeFile(fileName,content[x1:x2])
+    
 
-convertToJSON(input("File name : "))
+clean(input("File name : "))
 #main()
