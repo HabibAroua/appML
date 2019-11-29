@@ -68,7 +68,15 @@ def clean(fileName):
     x2=content.find("</body>")
     print(content[x1:x2])
     writeFile(fileName,content[x1:x2])
-    
 
-clean(input("File name : "))
+def cleanBody(fileName):
+    content = readFile(fileName)
+    x1=content.find("script")
+    x2=content.find("</script>")
+    print(content[x1:x2])
+    #writeFile(fileName,content[x1:x2])
+        
+
+#clean(input("File name : "))
+cleanBody(input("File name : "))
 #main()
