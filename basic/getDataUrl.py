@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-# a use of raw_input() 
-
+# a use of raw_input()  #segmentation news paper #analyse newspaper nombre article par topic #dashboard #resultat 
 import urllib.request 
 import urllib.parse
 import re
@@ -77,6 +76,6 @@ def cleanBody(fileName):
     #writeFile(fileName,content[x1:x2])
         
 
-#clean(input("File name : "))
-cleanBody(input("File name : "))
+clean(input("File name : "))
+#cleanBody(input("File name : "))
 #main()

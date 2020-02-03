@@ -1,0 +1,70 @@
+mkdir docker
+cd docker
+npm version
+npm install express
+Creer un ficher package.json
+/////////////////////////////////
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description":"node.js on Docker",
+    "author":"First Last <first.last@example.com>",
+    "main":"server.js",
+    "scripts":{
+        "start":"node server.js"
+    },
+    "dependencies":{
+        "express":"^4.13.3"
+    }
+   
+}
+/////////////////////////////////
+creer un ficher server.js
+'use strict';
+const express = require('express');
+
+const PORT = 8080;
+
+const app= express();
+
+app.get('/',function(req,res)
+       {
+           res.send("Hello world \n");
+       });
+
+app.listen(PORT);
+console.log('Runninf on http://localhost '+PORT);
+////////////////////////////////////////
+node server.js
+Creer un fichier docker
+//////////////////////////////
+From node:boron
+
+#Create app directory
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+#install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
+COPY . /usr/src/app
+
+EXPOSE 8080
+CMD ["npm","start"]
+/////////////////////////
+sudo docker build -t habib/node-web-app .
+sudo docker images
+sudo docker run -p 49160:8080 -d -it --name container2 habib/node-web-app (code=693c7005b4a09584f12f777a74d8aa12cb801aa1b473c12396f90d2db5476798)
+sudo docker ps
+sudo docker logs 693c7005b4a0 (tal9a el id ba3d mata3mil sudo docker ps)
+sudo docker exec -it 693c7005b4a0 /bin/bash --> (7il 3al google chrome el url hadha i)
+sudo docker images
+sudo docker tag 56875427b966 habib/node-web-app:latest
+sudo docker tag d070ec8edaf5 habib94/tp:latest
+
+sudo docker login
+
+sudo docker push habib94/tp (habib94 docker hub username)
