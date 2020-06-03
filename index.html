@@ -2,71 +2,48 @@
 <html>
 	<head>
 		<style>
-			.droptarget 
-			{
-				float: left; 
-				width: 500px; 
-				height: 500px;
-				margin: 15px;
-				padding: 10px;
-				border: 1px solid #aaaaaa;
-			}
-            
-            #myID
-            {
-                cursor: pointer; 
-            }
-
+		.droptarget
+		{
+			float: left;
+			width: 500px;
+			height: 500px;
+			margin: 15px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+		}
+		
+		
 		</style>
 	</head>
-	
+
 	<body>
-
-		<p id="phrase">Drag the p element back and forth between the two rectangles:</p>
-
-		<div style="width:200px; height:500px;" id="id0" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
-		  <input type="text" draggable="true" placeholder="Text" name="value" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget" class="myID" />
-          <input type="email" draggable="true" placeholder="Text" name="value" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget1" class="myID" />
-          <input type="email" draggable="true" placeholder="Text" name="value" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget2" class="myID" />
-          <input type="email" draggable="true" placeholder="Text" name="value" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget3" class="myID" />
-		</div>
-
-		<div id="id1" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-		
-		<div id="id2" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"><br></div>
-
-		<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
-
-		<p id="demo"></p>
-		
-		<button onclick="stack()">Click</button>
-
 		<script>
-		
+
 			function hello()
 			{
 				var x = document.getElementById("dragtarget").value;
 				alert(x);
 			}
-			
-			function dragStart(event) 
+
+			function dragStart(event)
 			{
-			  event.dataTransfer.setData("Text", event.target.id);
-			  document.getElementById("demo").innerHTML = "Started to drag the p element";
+				event.dataTransfer.setData("Text", event.target.id);
+				document.getElementById("demo").innerHTML = "Started to drag the p element";
 			}
 
-			function dragEnd(event) 
+			function dragEnd(event)
 			{
-			  document.getElementById("demo").innerHTML = "Finished dragging the p element.";
-			  //document.getElementById('dragtarget').value="Habib";
+				document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+				//document.getElementById('dragtarget').value="Habib";
+				document.getElementById("id1").innerHTML += "<br></br>";
 			}
 
-			function allowDrop(event) 
+			function allowDrop(event)
 			{
-			  event.preventDefault();
+				event.preventDefault();
 			}
 
-			function drop(event) 
+			function drop(event)
 			{
 				if(event.target.id =='id0')
 				{
@@ -90,23 +67,96 @@
 				var data = event.dataTransfer.getData("Text");
 				event.target.appendChild(document.getElementById(data));
 			}
-            function getAllValue()
+			
+			function getAllValue()
 			{
 				var myClasses = document.getElementsByClassName("myID");
 				var ch=""
-				for (var i = 0; i < myClasses.length; i++) 
+				for (var i = 0; i < myClasses.length; i++)
 				{
 					ch=ch+myClasses[i].value+"\n"
 				}
 				return ch;
 			}
-			
+
 			function stack()
 			{
-				alert(getAllValue());
+				document.getElementById("content").value = getAllValue();
+				alert("Stack");
+				//alert(x);
 			}
 			
+			//event for element to move
+			function Change() 
+			{	 
+				// style.cursor specifies the mouse cursor to be displayed 
+				// when pointing over an element. 
+				document.getElementById("dragtarget").style.cursor = "pointer"; 
+			}
+
+			function Change1() 
+			{	 
+				// style.cursor specifies the mouse cursor to be displayed 
+				// when pointing over an element. 
+				document.getElementById("dragtarget1").style.cursor = "pointer"; 
+			}
+			
+			function Change2() 
+			{	 
+				// style.cursor specifies the mouse cursor to be displayed 
+				// when pointing over an element. 
+				document.getElementById("dragtarget2").style.cursor = "pointer"; 
+			}
+			
+			function Change3() 
+			{	 
+				// style.cursor specifies the mouse cursor to be displayed 
+				// when pointing over an element. 
+				document.getElementById("dragtarget3").style.cursor = "pointer"; 
+			}
+			
+			function Change4() 
+			{	 
+				// style.cursor specifies the mouse cursor to be displayed 
+				// when pointing over an element. 
+				document.getElementById("dragtarget4").style.cursor = "pointer"; 
+			}
+
 		</script>
+
+		<p id="phrase">Drag the p element back and forth between the two rectangles:</p>
+
+		<div  style="width:200px; height:500px;" id="id0" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+			
+			<div onmousemove="Change();" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget">
+				<p>Input 1</p><input type="text" draggable="true" placeholder="Text" name="value"  class="myID" /><br></br>
+			</div>
+		
+			<div onmousemove="Change1();" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget1">
+				<p>Input 2</p><input type="email" draggable="true" placeholder="Text" name="value"  class="myID" /><br></br>
+			</div>
+			<!--<div onmouseleave="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget2">-->
+			<div onmousemove="Change2();" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget2">
+				<p>Input 3</p><input type="email" draggable="true" placeholder="Text" name="value" class="myID" /><br></br>
+			</div>
+			<div onmousemove="Change3();" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget3">
+				<p>Input 4</p><input type="email" draggable="true" placeholder="Text" name="value" class="myID" /><br></br>
+			</div>
+		</div>
+		
+		<div id="id1" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<form method="GET">
+				<textarea id=content></textarea>
+				<button >Confirm</button>
+			</form>
+			<button onclick="stack()">Save</button>
+		</div>
+		
+<!--
+		<div id="id2" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+-->
+		<!--<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+		<p id="demo"></p> -->
 
 	</body>
 </html>
