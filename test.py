@@ -40,3 +40,4 @@ x_input = x_input.reshape((1, n_steps, n_features))
 yhat = model.predict(x_input, verbose=0)
 print('the result is ')
 print(yhat)
+#https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/
