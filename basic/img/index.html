@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <input id="edValue" type="text" onInput="edValueKeyPress('edValue','lblValue','Label : ')">
+        <input type="text" value="Label  :" id="lblValue" class="myID"/>
+        <br>
+        <input id="edValue1" type="text" onInput='edValueKeyPress("edValue1","lblValue1","Label1 : ")'>
+        <input type="text" id="lblValue1" class="myID"/>
+        <br>
+        <button onclick="stack();">Click</button>
+        <script>
+            function edValueKeyPress(id1,id2,def)
+            {
+                var edValue = document.getElementById(id1);
+                var s = edValue.value;
+                var lblValue = document.getElementById(id2);
+                document.getElementById(id2).value = def + s;
+            }
+            $(
+		        function()
+		        {
+                    $(".myID").hide();
+                }
+             );
+            
+            function getAllValue()
+			{
+				var myClasses = document.getElementsByClassName("myID");
+				var ch=""
+				for (var i = 0; i < myClasses.length; i++) 
+				{
+					ch=ch+myClasses[i].value+"\n"
+				}
+				return ch;
+			}
+			
+			function stack()
+			{
+				alert(getAllValue());
+			}
+        </script>
+    </body>
+</html>
