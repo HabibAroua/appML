@@ -2,6 +2,16 @@ from numpy import array
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM
 from tensorflow.keras.layers import Dense
+import subprocess
+import webbrowser
+import sys
+
+url = 'https://www.facebook.com'
+if sys.platform == 'darwin':    # in case of OS X
+    subprocess.Popen(['open', url])
+else:
+    webbrowser.open_new_tab(url)
+
 
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps):
